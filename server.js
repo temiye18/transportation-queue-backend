@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.get("/getCustomers", async (req, res) => {
+app.get("/api/getCustomers", async (req, res) => {
   try {
     const customers = await Queue.find();
     res.status(200).json(customers);
@@ -31,7 +31,7 @@ app.get("/getCustomers", async (req, res) => {
   }
 });
 
-app.get("/getPlanners", async (req, res) => {
+app.get("/api/getPlanners", async (req, res) => {
   try {
     const planners = await Planner.find();
     res.status(200).json(planners);
@@ -40,7 +40,7 @@ app.get("/getPlanners", async (req, res) => {
   }
 });
 
-app.post("/addCustomer", async (req, res) => {
+app.post("/api/addCustomer", async (req, res) => {
   const { date, slot } = req.query;
 
   try {
@@ -69,7 +69,7 @@ app.post("/addCustomer", async (req, res) => {
   }
 });
 
-app.patch("/updateCustomer/:date", async (req, res) => {
+app.patch("/api/updateCustomer/:date", async (req, res) => {
   const { date } = req.params;
   const { slot } = req.query;
 

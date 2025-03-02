@@ -22,6 +22,6 @@ const QueueSchema = new Schema(
   }
 );
 
-const Queue = mongoose.model("Queue", QueueSchema);
+const Queue = mongoose.model("Queues", QueueSchema);
 
 export default Queue;

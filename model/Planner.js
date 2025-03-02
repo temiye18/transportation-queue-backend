@@ -75,6 +75,6 @@ PlannerSchema.eachPath((path) => {
   }
 });
 
-const Planner = mongoose.model("Planner", PlannerSchema);
+const Planner = mongoose.model("Planners", PlannerSchema);
 
 export default Planner;
